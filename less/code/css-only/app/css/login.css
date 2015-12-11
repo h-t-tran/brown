@@ -1,0 +1,90 @@
+#container
+{
+    margin-top:5px;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #FFF;
+    padding: 5px;
+
+    /*  The radius block is repeated again below twice */
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+
+    color: #000;
+}
+
+#login-form
+{
+    background: #f8f8f8;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    border: black 1px solid;
+
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+
+    padding: 5px;
+
+}
+
+/* The login-form selector is repeated 3x.  Would be nice if we can do this
+   #login-form {
+        ...
+
+        input[type=textbox] {
+           ...
+        }
+
+        input[type=submit] {
+           ...
+        }
+
+        label {
+          ...
+        }
+   }
+
+ */
+#login-form input[type=textbox]
+{
+    /*  Designer wants this font to match that in Login page */
+    font-family: "Open Sans", Verdana, Helvetica, sans-serif;
+
+    font-size: 18px;
+    background: #ffffe0;
+
+    display: block;
+    border: 1px #000 solid;
+
+
+    /* we want this to be 3/4 of the width of 400 of the #login-form */
+    width: 300px;
+
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+
+    padding: 2px;
+}
+
+#login-form input[type=submit]
+{
+    background: lightgray;
+
+    /* we want this to be 1/4 of the width of 400 of the #login-form */
+    width: 100px;
+
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+#login-form label
+{
+    width: 150px;
+}
+

@@ -1,0 +1,85 @@
+@import "variables.less";
+@import "common.less";
+
+@login-form-width:  400px;
+
+#container
+{
+    margin-top:5px;
+
+    /* designer wants the container to be 2x the width of the login-form */
+    width:              @login-form-width * 2;
+
+
+    margin-left:        auto;
+    margin-right:       auto;
+    background:         #FFF;
+    padding:            5px;
+
+    .rounded-corners(5px);
+
+    color:              @default-text-color;
+}
+
+#login-form
+{
+    ////////////////////////////
+    // override the global definition
+    @an-error-color: orange;
+
+    ////////////////////////////
+    // using namespacing
+    //#acme-store-namespace > .error-style;
+    //#acme-store-namespace > .info-style;
+
+    // invoke lighten()
+    background: lighten(@page-background-color, 25%);
+    //background: @an-error-color;
+
+    width:          400px;
+    margin-left:    auto;
+    margin-right:   auto;
+    border:         black 1px solid;
+
+    // invoke the overload function.
+    .rounded-corners(5px, 1);
+
+    padding:        5px;
+
+
+    input[type=textbox]
+    {
+        /*  Designer wants this font to match that in Login page */
+        font-family:    @default-font;
+
+        font-size:      18px;
+        background:     @entry-background-color;
+
+        display:        block;
+        border:         1px #000 solid;
+
+
+        /* we want this to be 3/4 of the width of 400 of the #login-form */
+        width:          300px;
+
+        .rounded-corners(5px);
+
+        padding:        2px;
+    }
+
+    input[type=submit]
+    {
+        background:     lightgray;
+
+        /* we want this to be 1/4 of the width of 400 of the #login-form */
+        width:          @login-form-width / 4;
+        .rounded-corners(5px);
+    }
+
+    label
+    {
+        width:          150px;
+    }
+}
+
+

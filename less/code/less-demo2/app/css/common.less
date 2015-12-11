@@ -1,0 +1,73 @@
+@import "variables.less";
+
+// global scope
+@an-error-color: red;
+
+//
+// define a namespace
+//
+#acme-store-namespace {
+    // override the global
+    @an-error-color: orange;
+
+    .info-style {
+        background: green;
+        //background: @an-error-color;
+        font-size: 5px;
+    }
+
+    .error-style {
+        background: red;
+        font-size: 20px;
+    }
+
+
+}
+
+html
+{
+    font-family: @default-font;
+    font-size: 14px;
+}
+
+body
+{
+    background: #FFFFFF;
+}
+
+h1
+{
+    font-size: 24px;
+}
+h2
+{
+
+    font-size: 18px;
+}
+
+// 1-arg function
+.rounded-corners( @size ) {
+    border-radius: @size;
+    -moz-border-radius: @size;
+    -webkit-border-radius: @size;
+}
+
+// overloaded.
+.rounded-corners( @size, @factor ) {
+    border-radius: @size * @factor;
+    -webkit-border-radius: @size  * @factor;
+    -moz-border-radius: @size  * @factor;
+}
+
+/**
+.rounded-corners( @size ) when (@size > 10px) {
+    border-radius: 50px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+}
+.rounded-corners( @size) when (@size <= 10px) {
+    border-radius: @size;
+    -moz-border-radius: @size;
+    -webkit-border-radius: @size;
+}
+***/
