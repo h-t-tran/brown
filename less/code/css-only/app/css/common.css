@@ -6,6 +6,11 @@ html
     font-size: 14px;
 }
 
+.important-style {
+    background: red;
+    padding: 1px;
+}
+
 body
 {
     /* magic number #FFFFFF.  */
