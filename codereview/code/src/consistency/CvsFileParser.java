@@ -12,7 +12,7 @@ import org.apache.log4j.Logger;
 public class CvsFileParser {
 	
 	// (1) - private var
-	private static Logger _log = Logger.getLogger(CvsFileParser.class.getName());
+	private final static Logger _log = Logger.getLogger(CvsFileParser.class.getName());
 	
 	// (2) - constants
 	private final static String _ERROR_MSG_PREFIX = "CSV Parse Error: ";

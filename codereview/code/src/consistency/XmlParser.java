@@ -3,12 +3,16 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+import org.apache.log4j.Logger;
+
 /**
  * 
  *  Let's pretend this is written a new developer recently joined the team.
  *
  */
 public class XmlParser {
+	
+	private final static Logger myLogger = Logger.getLogger(XmlParser.class.getName());
 	
 	public boolean parse(String filename) {
 
@@ -24,6 +28,7 @@ public class XmlParser {
 		} 
 		catch(NullPointerException e) {
 			System.out.println(e.getMessage());
+			myLogger.error(e.toString());
 			return false;
 		}
 		catch(IOException e) {
