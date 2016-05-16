@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <script src="./Calculator.js"></script>
+    <script src="../lib/jquery.js"></script>
+    <style>
+        .operant {
+            width: 5em
+        }
+    </style>
+    <script>
+        function showResult() {
+            var calc = new Calculator();
+            var op1 = $('#operant1').val();
+            var op2 = $('#operant2').val();
+            calc.addAndDisplay(op1, op2, $("#result"));
+            console.debug("result = ", $("#result").val());
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="operant1" class="operant" value="2">
+    <span>+</span>
+    <input type="text" id="operant2" class="operant" value="3">
+    <span>=</span>
+    <input type="text" id="result" class="operant" value="">
+    <br/><br/>
+    <input type="button" onclick="showResult()" value="Show Result">
+</body>
+</html>

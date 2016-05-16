@@ -1,0 +1,7 @@
+
+- in WS, demo auto compile of TS->JS
+- demo TS variable, typing, class definition, inheritance, interface.
+          generics.
+- in WS, demo debugging of TS in Chrome's Jetbrain IDE Support extenstion.
+- demo referencing existing d.ts files.
+- installation of typescript to node

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <script src="./Calculator.js"></script>
+    <script src="./SciCalculator.js"></script>
+    <script src="./lib/jquery2.1.4.js"></script>
+    <script src="./bootstrap.js"></script>
+    <style>
+        .operant {
+            width: 5em
+        }
+
+        .button {
+            width: 20em;
+        }
+    </style>
+
+</head>
+<body>
+    <input type="text" id="operant1" class="operant" value="2">
+    <span>+</span>
+    <input type="text" id="operant2" class="operant" value="3">
+    <span>=</span>
+    <input type="text" id="result" class="operant" value="">
+    <br/><br/>
+    <input type="button" class="button" onclick="showResultUsingBaseCalculator()" value="Show Result Using Base Calc">
+    <br/><br/>
+    <input type="button" class="button"  onclick="showResultUsingSciCalculator()" value="Show Result Using Scientic Calc">
+</body>
+</html>
