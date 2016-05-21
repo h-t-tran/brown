@@ -1,5 +1,6 @@
 /// <reference path="IMathOps.ts" />
 /// <reference path="Calculator.ts" />
+/// <reference path="SciCalculator.ts" />
 var GDMath;
 (function (GDMath) {
     (function (CalcType) {
@@ -16,6 +17,7 @@ var GDMath;
                 resultCalc = new GDMath.Calculator();
             }
             else if (type == CalcType.SCI_CALC) {
+                resultCalc = new GDMath.SciCalculator();
             }
             return resultCalc;
         };
@@ -23,4 +25,3 @@ var GDMath;
     })();
     GDMath.CalculatorFactory = CalculatorFactory;
 })(GDMath || (GDMath = {}));
-//# sourceMappingURL=CalculatorFactory.js.map

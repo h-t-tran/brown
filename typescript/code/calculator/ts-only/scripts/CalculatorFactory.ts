@@ -1,5 +1,6 @@
 /// <reference path="IMathOps.ts" />
 /// <reference path="Calculator.ts" />
+/// <reference path="SciCalculator.ts" />
 module GDMath {
 
     export enum CalcType {
@@ -17,7 +18,7 @@ module GDMath {
                 resultCalc = new GDMath.Calculator();
             }
             else if(type == CalcType.SCI_CALC) {
-                //resultCalc = new GDMath.SciCalculator();
+                resultCalc = new GDMath.SciCalculator();
             }
 
             return resultCalc;
