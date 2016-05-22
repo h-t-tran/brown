@@ -13,3 +13,4 @@ var GDCollection;
     })();
     GDCollection.Stack = Stack;
 })(GDCollection || (GDCollection = {}));
+//# sourceMappingURL=Stack.js.map

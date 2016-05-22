@@ -1,10 +1,10 @@
-/**
+
 /// <reference path="IMathOps.ts" />
 /// <reference path="Calculator.ts" />
 /// <reference path="SciCalculator.ts" />
 /// <reference path="CalculatorFactory.ts" />
 /// <reference path="../typings/jquery/jquery.d.ts" />
-***/
+
 import Calculator = GDMath.Calculator;
 import SciCalculator = GDMath.SciCalculator;
 

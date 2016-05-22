@@ -1,8 +1,9 @@
-/*   /// <reference path="IMathOps.ts" /> */
+/// <reference path="IMathOps.ts" />
 var GDMath;
 (function (GDMath) {
     var Calculator = (function () {
         function Calculator() {
+            console.debug("Calculator constructor");
         }
         Calculator.prototype.add = function (x, y) {
             return this._addHelper(x, y);
@@ -28,3 +29,4 @@ var GDMath;
     })();
     GDMath.Calculator = Calculator;
 })(GDMath || (GDMath = {}));
+//# sourceMappingURL=Calculator.js.map

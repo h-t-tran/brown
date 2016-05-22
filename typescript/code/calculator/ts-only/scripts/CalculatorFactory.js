@@ -25,3 +25,4 @@ var GDMath;
     })();
     GDMath.CalculatorFactory = CalculatorFactory;
 })(GDMath || (GDMath = {}));
+//# sourceMappingURL=CalculatorFactory.js.map

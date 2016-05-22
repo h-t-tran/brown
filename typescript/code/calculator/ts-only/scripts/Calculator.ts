@@ -1,8 +1,11 @@
-/*   /// <reference path="IMathOps.ts" /> */
+/// <reference path="IMathOps.ts" />
 
 module GDMath {
 
      export class Calculator implements GDMath.IMathOps {
+         constructor() {
+            console.debug("Calculator constructor");
+         }
 
          public add(x: number, y: number) : number {
             return this._addHelper(x, y);

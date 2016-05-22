@@ -1,10 +1,8 @@
-/**
 /// <reference path="IMathOps.ts" />
 /// <reference path="Calculator.ts" />
 /// <reference path="SciCalculator.ts" />
 /// <reference path="CalculatorFactory.ts" />
 /// <reference path="../typings/jquery/jquery.d.ts" />
-***/
 var Calculator = GDMath.Calculator;
 var SciCalculator = GDMath.SciCalculator;
 function showResultUsingBaseCalculator() {
@@ -35,3 +33,4 @@ function testCallback() {
         return x * x;
     });
 }
+//# sourceMappingURL=bootstrap.js.map
