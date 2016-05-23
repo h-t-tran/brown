@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "sourceMap": true
+  },
+  "filesGlob": [
+    "typings/tsd.js",
+    "./**/*.ts"
+  ]
+}
