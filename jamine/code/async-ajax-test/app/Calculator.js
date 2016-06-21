@@ -8,6 +8,14 @@ Calculator.prototype.configure = function(successCallback, errorCallback) {
 		success: successCallback,
 		error: errorCallback
 	});
+
+	/**
+	$.ajax({
+		url: "https://api.github.com/repos/vmg/redcarpet/issues?state=closed",
+		success: successCallback,
+		error: errorCallback
+	});
+	**/
 };
 
 Calculator.prototype.add = function(x, y) {

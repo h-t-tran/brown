@@ -4,7 +4,7 @@ describe("Calculator", function() {
 	var _calc;
 
 
-	describe('configure', function() {
+	describe('configure function', function() {
 		beforeEach(function() {
 			_calc = new Calculator();
 		});
@@ -23,11 +23,8 @@ describe("Calculator", function() {
 			//
 			// Act
 			//
-			_calc.configure(function() {
-									isSuccess = true;
-								}, function() {
-									isSuccess = false;
-								});
+			_calc.configure(function() { isSuccess = true;	},
+							function() { isSuccess = false;	});
 
 			//
 			// Assert
@@ -43,18 +40,27 @@ describe("Calculator", function() {
 			//
 			var isSuccess;
 
-			// arg is an object passed to $.ajax().  It has the following properties:
+			// arg is an object that Jasmine will pass to our supplied function.
+			// arg has the following properties:
 			// {
 			//		url: ...,
 			//		success: function(result){},
 			//		error: function(error){}
 			//  }
 			//
-			// 	!!! No real ajax call. !!!
+			// 	!!! No real ajax call. !!!  Verify in Network tab.
+			//
+			// The follow code is read as follow:
+			// "When $ajax() function is called, the provided callback function(arg) will be invoked.
+			//  Then we call success() to simulate a successful REST call"
+			//
 			spyOn($, 'ajax').and.callFake(function( arg ) {
+
 				// mock a success $.ajax() calls.
 				console.debug("Invoking mock $.ajax() success call.");
-				arg.success()
+
+				// call to success() to simulate success response
+				arg.success();
 			});
 
 

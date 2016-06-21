@@ -1,0 +1,20 @@
+slide 10: "hello word" demo
+    - go over calculator module
+    - go over calculatorSpec
+    "sample-test" - run specRunner.html
+    
+slide 12: timeout async testing
+    "async-timeout-test"
+        1. uncomment xdescribe and run "asyncAdd()"
+        2. Next uncomment and test 'asyncAdd using done callback'
+           Show the time when the 2 tests run in console.
+           The tests are slow
+           Lots of callbacks and difficult to follow
+        3. Next run "asyncAdd  using jasmine.clock to make the tests faster" where the clock make setTimeout() unncessary.
+           Easier to follow and no callbacks.
+           
+slide 16: ajax async test
+    1. Show 'should invoke call $.ajax() once' to demo spy on JQuery ajax()
+       Show failed test if there are 2 ajax calls.
+    2. Show 'should invoke success callback if REST call is successful' and no REST call and simulate success REST call.
+    3. Show 'should invoke error callback if REST call failed' and no REST call and simulate error REST call.
