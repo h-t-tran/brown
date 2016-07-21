@@ -1,3 +1,4 @@
+// this is a comment
 var Calculator = function() {
 	this._result = -1;
 };
