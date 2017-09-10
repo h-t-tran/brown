@@ -1,0 +1,84 @@
+npm init   - create package.json
+npm list  - list all installed package in node_modules of current dir
+npm prune - remove any installed packages that are no listed in package.json
+npm outdated - check any installed packages that are outdated from current release
+
+npm list -g   // list global location.
+C:\Users\hoanh.tran\AppData\Roaming\npm
+
+npm uninstall -g live-server
+
+live-server --entry-file=./app/Game.html --port=9124
+
+.live-server.json can be used instead of args in the command line.  the JSON file must be in the same
+location where we run live-server (eg. brown\productivity\code\live-server\app)
+
+.live-server.json must be located in %UserProfile% (c:\users\john)
+
+Demo:
+===================================================================
+live server
+1)
+  - show life b4 live server.
+  - comment out c:\tools\node\node_modules
+  - npm install live-server --save-dev
+  - live-server -v
+  - cd to c:\src\brown\productivity\code\live-server and
+    run "live-server --entry-file=./app/Game.html --port=9124"
+  - Resize browser and webstorm to 1/2 screen side by side.
+    mod CSS, JS or HTML to see reload
+
+  - How does live-server work?  View page source and see injected code and websocket.
+
+2) demo use of .live-server.json
+   cd c:\src\brown\productivity\code\live-server\app
+
+===================================================================
+browser sync
+for form-input synch between browsers, Just make sure your form fields have IDs and then they should sync...
+browser-sync start --server --files "**/*"  --index ./app/Game.html  --browser chrome --browser firefox --browser iexplore
+
+- cd c:\src\brown\productivity\code\browser-sync>
+- browser-sync start --server --files "**/*" --index ./app/Game.html  --browser chrome --browser firefox --browser iexplore
+- put 3 browsers side by side
+  load Chrome in Mobile mode
+    Chrome mobile screen:  developer window and select the upper left mobileicon
+
+  Enter guess and select Verify
+  Enter form, Submit.  verify all 3 browsers see dialog
+- Node JS, CSS and HTML to see reload
+
+===================================================================
+json-server
+- json-server --watch rules.json
+- GET http://localhost:3000/rules
+  GET http://localhost:3000/rules/10
+  GET http://localhost:3000/assets
+
+  POST:  http://localhost:3000/assets
+    header: Content-Type: application/json
+    BODY raw:  {
+                   "id": 200,
+                   "name": "F16",
+                   "desc": "F16 eagle"
+               }
+
+   (create) POST:  http://localhost:3000/rules
+      header: Content-Type: application/json
+      BODY raw:  {
+                       "id": 100,
+                       "parameter": "wave height",
+                       "condition": "<",
+                       "threshold": 300
+                     }
+
+   (update) PUT:  http://localhost:3000/rules/100
+      header: Content-Type: application/json
+      BODY raw:  {
+                       "id": 100,
+                       "parameter": "wave height",
+                       "condition": "<",
+                       "threshold": 300
+                     }
+  (delete) DELETE http://localhost:3000/rules/100
+

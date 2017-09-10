@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>(Live Server Demo) Guess The Number !</title>
+	<link href="../app/css/bootstrap.css" rel="stylesheet">
+	<link href="../app/css/app.css" rel="stylesheet">
+</head>
+<body ng-app="app">
+<div class="container" ng-controller="GameController">
+	<h2>(Live Server Demo) {{title}}</h2>
+	<p class="well lead emphasis">{{intro}}</p>
+
+	<label>Your Guess: </label><input type="number" ng-model="guess"/>
+	<button ng-click="verifyGuess()" class="btn btn-primary btn-sm">Verify</button>	
+
+	<p>
+		<p ng-show="deviation<0" class="alert alert-warning">Your guess is higher.</p>
+		<p ng-show="deviation>0" class="alert alert-warning">Your guess is lower.</p>
+		<p ng-show="deviation===0" class="alert alert-success">Yes! That"s it.</p>
+	</p>
+	<p class="text-info">No of guesses : <span class="badge">{{noOfTries}}</span><p>
+</div>
+	<script src="../app/lib/angular.js"></script>
+	<script src="../app/app.js"></script>
+
+</body>
+</html>

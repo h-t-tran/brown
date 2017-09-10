@@ -1,1 +1,0 @@
-live-server --entry-file=./app/Game.html --port=9124

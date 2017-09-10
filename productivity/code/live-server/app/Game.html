@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Guess The Number !</title>
+	<title>(Live Server Demo) Guess The Number !</title>
 	<link href="/app/css/bootstrap.css" rel="stylesheet">
 	<link href="/app/css/app.css" rel="stylesheet">
 </head>
 <body ng-app="app">
 <div class="container" ng-controller="GameController">
-	<h2>{{title}}</h2>
+	<h2>(Live Server Demo) {{title}}</h2>
 	<p class="well lead emphasis">{{intro}}</p>
 
 	<label>Your Guess: </label><input type="number" ng-model="guess"/>
 	<button ng-click="verifyGuess()" class="btn btn-primary btn-sm">Verify</button>	
-	<button ng-click="initializeGame()" class="btn btn-warning btn-sm">Restart</button>	
 
 	<p>
 		<p ng-show="deviation<0" class="alert alert-warning">Your guess is higher.</p>

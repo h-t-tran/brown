@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>(Browser Sync Demo) Guess The Number !</title>
+	<link href="/app/css/bootstrap.css" rel="stylesheet">
+	<link href="/app/css/app.css" rel="stylesheet">
+</head>
+<body ng-app="app">
+<div class="container" ng-controller="GameController">
+	<h2>(Browser Sync Demo) {{title}}</h2>
+	<p class="well lead emphasis">{{intro}}</p>
+
+	<!--<div ng-repeat="i in [1, 2, 3, 4, 5, 6, 7, 8, 9]">-->
+	<div>
+		<label>Your Guess: </label><input type="number" ng-model="guess"/>
+		<button ng-click="verifyGuess()" class="btn btn-primary btn-sm">Verify</button>
+
+		<p>
+			<p ng-show="deviation<0" class="alert alert-warning">Your guess is higher.</p>
+			<p ng-show="deviation>0" class="alert alert-warning">Your guess is lower.</p>
+			<p ng-show="deviation===0" class="alert alert-success">Yes! That"s it.</p>
+		</p>
+		<p class="text-info">No of guesses : <span class="badge">{{noOfTries}}</span><p>
+		<hr>
+	</div>
+
+	<div style="font-weight: bold">Enter your information</div>
+	<form>
+		First name:<br>
+		<input type="text" name="firstname" id="firstname" ng-model="firstname"><br>
+
+		Last name:<br>
+		<input type="text" name="lastname" id="lastname" ng-model="lastname"><br>
+
+		Age:<br>
+		<input type="text" name="age" id="age" ng-model="age"><br>
+
+		Employeer:<br>
+		<input type="text" name="employer" id="employer" ng-model="employer"><br>
+			</form>
+
+	<button ng-click="onOk()" class="btn btn-primary btn-sm">Submit</button>
+
+</div>
+	<script src="/app/lib/angular.js"></script>
+	<script src="/app/lib/ui-bootstrap-tpls.js"></script>
+	<script src="/app/lib/modalSvc.js"></script>
+	<script src="/app/app.js"></script>
+
+</body>
+</html>
