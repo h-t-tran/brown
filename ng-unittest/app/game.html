@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>(Live Server Demo) Guess The Number !</title>
+	<link href="../app/css/bootstrap.css" rel="stylesheet">
+	<link href="../app/css/app.css" rel="stylesheet">
+</head>
+<body ng-app="app">
+<div class="container" ng-controller="GameController">
+	<header-directive result="searchResult"></header-directive>
+	<h2>{{title}}</h2>
+	<p class="well lead emphasis">{{intro}}</p>
+
+	<label>Your Guess: </label>
+	<input type="number" ng-model="guess"/>
+	<button ng-click="verifyGuess()" class="btn btn-default btn-sm">Verify</button>
+	<button ng-click="join()" class="btn btn-primary btn-sm">Join Online Game</button>
+
+	<p>
+		<p ng-show="deviation<0" class="alert alert-warning">Your guess is higher.</p>
+		<p ng-show="deviation>0" class="alert alert-warning">Your guess is lower.</p>
+		<p ng-show="deviation===0" class="alert alert-success">Yes! That"s it.</p>
+	</p>
+	<p class="text-info">No of guesses : <span class="badge">{{noOfTries}}</span><p>
+
+	<br/><br/>
+	<footer-component title="User information"></footer-component>
+</div>
+	<script src="../app/lib/angular.js"></script>
+	<script src="../app/app.js"></script>
+    <script src="../app/gameSvc.js"></script>
+    <script src="../app/headerDirective.js"></script>
+    <script src="../app/footerComponent.js"></script>
+</body>
+</html>

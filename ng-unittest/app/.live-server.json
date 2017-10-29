@@ -1,0 +1,6 @@
+{
+    "port": 8181,
+    "open": true,
+    "file": "Game.html",
+    "logLevel": 2
+}
