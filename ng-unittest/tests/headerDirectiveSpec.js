@@ -1,6 +1,6 @@
 describe('headerDirective', function () {
     "use strict";
-    
+
     var _theDirective, _theController;
 
     beforeEach(module('app'));
