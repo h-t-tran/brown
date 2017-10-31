@@ -18,9 +18,9 @@
 
         $scope.join = function() {
             gameSvc.joinOnline(function() {
-                // success
+                // success callback
             }, function(errMsg) {
-                // error
+                // error callback
             });
         };
 

@@ -1,46 +1,68 @@
 describe('gameSvc', function () {
     "use strict";
 
+    var _realGameSvc;
+    var _getMock = jasmine.createSpy();
+    var _postMock = jasmine.createSpy();
+    var _deleteMock = jasmine.createSpy();
 
+    beforeEach(module('app'));
 
-    var _scope, _controller, _gameSvc;
+    beforeEach(function () {
+        module('app', function($provide) {
 
-    // beforeEach(module('app', function($provide) {
-    //     $provide.service('gameSvc', function() {
-    //
-    //     });
-    //
-    //     // create and save the game svc
-    //     angular.mock.inject(function (gameSvc) {
-    //         _gameSvc = gameSvc;
-    //     });
-    // }));
-    //
-    // beforeEach(angular.mock.inject(function ($rootScope, $controller) {
-    //     // create a cope to be injected into the controller function
-    //     _scope = $rootScope.$new();
-    //
-    //     // a function to create the controller.
-    //     var controllerFunc = function() {
-    //         return $controller('GameController', {
-    //             '$scope': _scope
-    //         });
-    //     };
-    //
-    //     //
-    //     // create the controller we want to test
-    //     //
-    //     _controller = controllerFunc();
-    // }));
+            // Create a mock $http object that will be injected into the gameSvc.
+            // NOTE: we can also use $httpBackend.
+            $provide.service('$http', function() {
 
+                // create the mock functions.
+                this.get = _getMock.and.returnValue({
+                    then : jasmine.createSpy()
+                });
 
-    describe('created', function() {
-        it('should create controller and services', function() {
-            expect(1).not.toBe(null);
+                this.post = _postMock;
+                this.delete = _deleteMock;
+            });
         });
 
-
+        //
+        // inject and save the real game svc service
+        //
+        inject(function (_gameSvc_) {
+            _realGameSvc = _gameSvc_;
+        });
     });
 
+    // Another way to "create" the gameSvc is....
+    // beforeEach(function() {
+    //     inject(function($injector) {
+    //         _realGameSvc = $injector.get('gameSvc');
+    //     });
+    // });
 
+    it('should be injected.', function() {
+        expect(_realGameSvc).toBeTruthy();
+    });
+
+    describe('joinOnline', function() {
+        it('should invoke the http.get()', function() {
+            //
+            // Arrange
+            //
+            var success = jasmine.createSpy();
+            var error = jasmine.createSpy();
+
+            //
+            // Act
+            //
+            _realGameSvc.joinOnline(success, error);
+
+            //
+            // Assert
+            //
+            expect(_getMock).toHaveBeenCalled();
+            expect(_postMock).not.toHaveBeenCalled();
+            expect(_deleteMock).not.toHaveBeenCalled();
+        });
+    });
 });

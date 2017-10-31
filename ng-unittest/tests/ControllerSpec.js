@@ -4,23 +4,18 @@ describe('GameController', function () {
     var _scope, _controller, _gameSvc;
 
     beforeEach(function () {
-
         module('app', function($provide) {
             $provide.service('gameSvc', function() {
 
             });
         });
 
-
-
-
         ////////////////////////////////////////////////
-        // inject and save the mock services
+        // inject and save the mock game svc services
         //
         inject(function (gameSvc) {
-            _gameSvc = _gameSvc;
+            _gameSvc = gameSvc;
         });
-
     });
 
 
@@ -47,13 +42,12 @@ describe('GameController', function () {
 
     describe('created', function() {
         it('should create controller and services', function () {
-            expect(_gameSvc).not.toBe(null);
-            expect(_controller).not.toBe(null);
+            expect(_gameSvc).toBeTruthy();
+            expect(_controller).toBeTruthy();
         });
     });
 
     describe('_initializeGame', function() {
-
         it('should reset all properties', function() {
             //
             // Arrange
@@ -70,6 +64,26 @@ describe('GameController', function () {
             expect(_scope.noOfTries).toBe(0);
             expect(_scope.guess).toBe(null);
             expect(_scope.deviation).toBe(null);
+        });
+    });
+
+    describe('join', function() {
+        it('should call gameSvc.joinOnline()', function() {
+            //
+            // Arrange
+            //
+            _gameSvc.joinOnline =  jasmine.createSpy(_gameSvc, 'joinOnline');
+
+            //
+            // Act
+            //
+            _scope.join();
+
+            //
+            // Assert
+            //
+            expect(_gameSvc.joinOnline).toHaveBeenCalled();
+
         });
     });
 });

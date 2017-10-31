@@ -4,7 +4,7 @@
     angular.module('app').factory('gameSvc', [
         '$http'
         , '$timeout'
-        , function ($http, $timeout ) {
+        , function ($http ) {
 
             var self = {};
 
