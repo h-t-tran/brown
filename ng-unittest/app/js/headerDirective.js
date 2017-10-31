@@ -9,6 +9,7 @@
             }
 
             var controllerFunc = function($scope) {
+                var theCtrl = this;
 
                 $scope.searchText = "abc";
                 $scope.startSearch = function() {
@@ -18,7 +19,7 @@
                 //
                 // expose functions for unit test.
                 //
-                $scope.search = _search;
+                theCtrl.search = _search;
             };
 
 
