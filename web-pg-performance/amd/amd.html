@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+    <script src="system.js"></script>
+    <script>
+        SystemJS.import("Main").then(function(exports) {
+            var obj = new exports.Main();
+        })
+
+        /*
+            Main --> A ---> B ----> C
+
+             main.js
+                    require("A");
+                    var a = new A();
+             A.js
+                   require("B.js");
+                   var b = new B();
+
+             B.js
+                   require("C.js");
+                   var c = new C();
+         */
+    </script>
+</body>
+</html>
