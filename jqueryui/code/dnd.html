@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title> Jquery UI Demo  </title>
+		<link type="text/css" href="js/jquery-ui-1.12.1.custom-sunny/jquery-ui-1.12.1.custom/jquery-ui.css" rel="stylesheet" />
+		<script type="text/javascript" src="js/jquery-ui-1.12.1.custom-sunny/jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-1.12.1.custom-sunny/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+
+
+
+		<script type="text/javascript">
+			$(function(){
+
+				$('#folder1').draggable({
+					revert: 'invalid',  // restore to original pos if can't dropped.
+                    cursor: "move"
+				});
+
+                $('#file1').draggable({
+                    revert: 'invalid',  // restore to original pos if can't dropped.
+                    cursor: "move"
+                });
+
+                $('#file-permanent').draggable({
+                    revert: 'invalid',  // restore to original pos if can't dropped.
+                    cursor: "not-allowed"
+                });
+
+                $('#trash').droppable({
+
+					tolerance: 'fit',  // 'touch'
+
+					// highlight the drop zone to indicate where to drop.
+                    activeClass: "opaque",
+
+					// any element with acceptable style is dropable.
+					accept : '.acceptable',
+
+                    drop: function (event, ui) {
+                        // delete the dropped element
+                        //ui.draggable.hide("explode");
+
+                        ui.draggable.fadeOut(function() {
+                            ui.draggable.remove();
+						})
+
+                    }
+				});
+			});
+		</script>
+		<style type="text/css">
+			#filesystem
+			{
+				background-color:#cccccc;
+				padding: 20px;
+				border: 1px ridge black;
+				border-radius: 10px;
+			}
+
+			.semitransparent
+			{
+				opacity: 0.6;
+			}
+
+			.opaque
+			{
+				opacity: 1.0;
+			}
+
+			.acceptable {
+
+			}
+		</style>	
+	</head>
+	<body>
+
+	<h1>jQuery UI Drag & Drop Demo</h1>
+
+	<div id="filesystem">
+		<div id="folder1" class='acceptable' style="display: inline-block;">
+			<img src="image/folder.jpg">
+			<div>My Folder</div>
+		</div>
+		<div id="file1" class='acceptable' style="display: inline-block;">
+			<img src="image/file.jpg">
+			<div>My File</div>
+		</div>
+
+		<div id="file-permanent" style="display: inline-block;">
+			<img src="image/file.jpg">
+			<div>Cannot Delete</div>
+		</div>
+	</div>
+
+	<img id="trash" class="semitransparent" src="image/trash.png" alt="trash" />
+	</body>
+</html>
+
+
