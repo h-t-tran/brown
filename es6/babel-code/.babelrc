@@ -1,0 +1,4 @@
+{
+  // convert to ES5.  Uncomment to use ES6.
+  "presets": ["env"]
+}
