@@ -16,7 +16,7 @@ describe("RestParameter", function () {
         expect(res).toBe("john 1st ave 21");
     });
 
-    it("should forward all parameter", function () {
+    it("should forward all parameters", function () {
 
         function corePrintUser(name, address, age, phone ) {
             let result = name + " " + address + " " + age + " " + phone;
@@ -25,7 +25,6 @@ describe("RestParameter", function () {
 
         // no need to repeat the param list of corePrintUser
         function printUser(...args) {
-            console.info(args);
 
             // use the spread operator.
             return corePrintUser(...args)

@@ -36,11 +36,32 @@ describe("SpreadOperator", function () {
         };
 
 
+        // instead of
+        // lotOfInfo = {
+        //     age: person.age,
+        //     name: person.name,
+        //     occupation: person.occupation,
+        //     socialNumber: otherInfo.socialNumber,
+        //     phoneNumber: otherInfo.phoneNumber
+        // }
         let lotOfInfo = {...person, ...otherInfo};
-
 
         expect(lotOfInfo.age).toBe(21);
         expect(lotOfInfo.socialNumber).toBe("123-45-6789");
         expect(lotOfInfo.phoneNumber).toBe("222-3333");
+    });
+
+    it("should spread an array", function () {
+
+        function sum(x, y, z ) {
+            return x + y + z;
+        }
+
+        var addens = [5, 6, 7];
+
+        // instead of sum(addens[0], addens[1], addens[2]);
+        let res = sum(...addens);
+
+        expect(res).toBe(18);
     });
 });
